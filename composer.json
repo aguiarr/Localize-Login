@@ -1,0 +1,15 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Localize\\": "app"
+        },
+        "require": {
+            "ext-pdo": "*"
+        }
+    },
+
+    "require": {
+        "ext-pdo": "*"
+    }
+    
+}

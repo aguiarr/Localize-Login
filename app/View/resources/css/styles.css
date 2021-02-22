@@ -59,9 +59,10 @@ body{
 	border-width: 2px;
 	border-color: black;
 	margin-bottom: 20px;
-	font-size: 16px;
+	font-size: 18px;
 	color: #0d0316;
 	padding: 10px;
+	outline: 0;
 }
 .txt-div label{
 	padding-right:100%;
@@ -107,6 +108,7 @@ body{
 }
 
 .content-singup{
+	transition: opacity 5s;
 	position: relative;
 	margin-top: 250px;
 	left: 200px;
