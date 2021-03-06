@@ -10,7 +10,7 @@
 	<script type="text/javascript" defer src="../app/View/resources/js/script.js"></script>
 </head>
 <body>
-	<div>
+	<div class="login">
 		<div class="float">
 			<div class="logo-div">
 				<div class="img-div">

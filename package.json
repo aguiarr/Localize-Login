@@ -1,5 +1,16 @@
 {
+  "name": "localize-login",
+  "version": "1.1.0",
+  "description": "Um sistema de login fictício",
+  "main": "index.js",
+  "repository": "https://github.com/aguiarr/localize-login.git",
+  "author": "Matheus Aguiar <aguiartgv@gmail.com>",
+  "license": "MIT",
+  "private": false,
   "dependencies": {
     "sass": "^1.32.8"
+  },
+  "scripts": {
+    "build": "sass ./resources/styles/index.scss ./app/View/resources/css/styles.css"
   }
 }
