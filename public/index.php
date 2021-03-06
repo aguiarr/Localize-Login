@@ -15,6 +15,12 @@ if(!array_key_exists($path, $rotas)){
 }
 $classControl = $rotas[$path];
 
+session_start();
+
+if(!isset($_SESSION['id']) && $path !== null){
+    header('Location: /');
+    // exit;
+}
 // var_dump($classControl);
 
 /** @var InterfaceController $controller */

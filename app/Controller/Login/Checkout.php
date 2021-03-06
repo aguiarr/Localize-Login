@@ -18,19 +18,21 @@ class Checkout extends Controller implements InterfaceController
 
     public function request(): void
     {
-        $ready = false;
 
+        if($_SESSION['id']){
+            header('Location: /home', true, 302);
+            exit;
+        }
         $email = filter_input(
             INPUT_POST,
             'email',
             FILTER_SANITIZE_STRING
         );
         if(is_null($email) || $email === false){
-            var_dump($email);
-            echo $email;
-            exit;
-        }else{
-           $ready = true;
+            echo $this->render('login.php',[
+                'title' => 'Localize - Login',
+                'erro'  => 'O campo "Email" deve ser preenchido'
+            ]);
         }
 
         $password = filter_input(
@@ -38,27 +40,31 @@ class Checkout extends Controller implements InterfaceController
             'password',
             FILTER_SANITIZE_STRING
         );
-        if(is_null($password) || $password === false){
-            exit;
-        }else{
-           $ready  = true;
-        }
+        if(is_null($password) || $password === false){           
+            echo $this->render('login.php',[
+                'title' => 'Localize - Login',
+                'erro'  => 'O campo "Senha" deve ser preenchido'
+            ]);
+        } 
 
-        if($ready){
-            $repoUser = new RepoUsers($this->connection);
-            $user_id = $repoUser->checkout($email, $password);
-            if(count($user_id) == 1){
-                $user = $repoUser->find(intval($user_id));
-                echo $this->render('home.php',[
-                    'title' => 'Localize - Home',
-                    'user'  => $user
-                ]);
-            }else{
-                echo $this->render('login.php',[
-                    'title' => 'Localize - Login',
-                    'erro'  => 'Email ou Senha incorretos!'
-                ]);
-            }
+
+
+        $repoUser = new RepoUsers($this->connection);
+        $user_id = $repoUser->checkout($email, $password)['id'];
+
+        if(count($user_id) == 1){
+
+            session_start();
+            $_SESSION['id'] = $user_id;
+
+            header('Location: /home', true, 302);
+
+        }else{
+            echo $this->render('login.php',[
+                'title' => 'Localize - Login',
+                'erro'  => 'Email ou Senha incorretos!'
+            ]);
         }
+        
     }
 }

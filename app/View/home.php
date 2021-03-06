@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Welcome!</h1>
-    <div><a href="/out">sair</a></div>
+    <div><a href="/logout">sair</a></div>
     <div>
         <h3>Your data:</h3>
         <div>
@@ -26,10 +26,6 @@
         <div>
             <h4>Phone:</h4>
             <input type="text" readonly class="feilds" value="<?=$user['phone']?>"></input>
-        </div>
-        <div>
-            <h4>Name:</h4>
-            <input type="text" readonly class="feilds" value="<?=$user['name']?>"></input>
         </div>
     </div>
 </body>

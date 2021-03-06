@@ -17,8 +17,11 @@ class RepoUsers implements RepositoryUsers
 
     public function checkout(string $email, string $password): array
     {
-        $sqlQuery = "SELECT id  FROM users WHERE email = '{$email}' AND password = md5('{$password}');";
+        $sqlQuery = "SELECT id  FROM users WHERE email = ? AND password = md5(?);";
         $stmt = $this->connection->prepare($sqlQuery);
+        $stmt->bindValue(1, $email);
+        $stmt->bindValue(2, $password);
+
         $stmt->execute();
         $dataList = $stmt->fetchAll();
         if($dataList[0] == null){
@@ -29,7 +32,7 @@ class RepoUsers implements RepositoryUsers
 
     public function find(int $id): array
     {
-        $sqlQuery = 'SELECT id, name, email, md5(password), phone FROM users WHERE id = ?;';
+        $sqlQuery = 'SELECT id, name, email, phone FROM users WHERE id = ?;';
         $stmt = $this->connection->prepare($sqlQuery);
         $stmt->bindValue(1, $id);
         $stmt->execute();
@@ -51,7 +54,7 @@ class RepoUsers implements RepositoryUsers
         $dataList = $stmt->fetchAll();
         $list = [];
         foreach ($dataList as $data){
-
+	 
             $list[] = new Users(
               $data['email'],
               $data['password'],
@@ -67,7 +70,6 @@ class RepoUsers implements RepositoryUsers
     {
         
         return $this->insert($users);
-        // return $this->update($users);
     }
 
     public function insert(Users $users): bool
