@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="../app/View/resources/css/styles.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 	
-	<script type="text/javascript" defer src="../app/View/resources/js/script.js"></script>
+	<script type="text/javascript" defer src="../app/View/resources/js/main.js"></script>
 </head>
 <body>
 	<div class="login">
@@ -54,29 +54,29 @@
 			</div>
 		</div>
 	</div>
-	<div class="content-singup" id="register">
+	<div class="hidden" id="register">
 		<form class="singup" method="post" action="/register" id="register">
 			<div class="btn-close">
-				<input type="button" value="X" id="btn-close">
+				<a type="button" id="btn_close">&#10005;</a>
 			</div>
 			<div class="registre">
 				<label>Register</label>
 			</div>
 			<div class="txt-singup-div">
 				<div class="txt-singup">
-					<label class="singup-label" required >Name</label>
+					<label class="singup-label" required >Name</label><br>
 					<input type="text" required name="name">
-				</div>
+				</div> 
 				<div class="txt-singup">
-					<label class="singup-label" required >Email</label>
+					<label class="singup-label" required >Email</label><br>
 					<input type="text" required name="email">
 				</div>
 				<div class="txt-singup"> 
-					<label class="singup-label">Phone</label>
+					<label class="singup-label">Phone</label><br>
 					<input type="text" required name="phone">
 				</div>
 				<div class="txt-singup">
-					<label class="singup-label" >Password</label>
+					<label class="singup-label" >Password</label><br>
 					<input type="password" required name="password">
 				</div>
 			</div>

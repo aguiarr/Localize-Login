@@ -1,19 +1,29 @@
 body {
 	background-image: $gradient_container;
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
 }
 
 .float{
 	background-color: $secondary_color;
 	position: relative;
 	width: 900px;
-	height: 500px;
-	margin-top: 100px;
+    height: 500px;
+    margin-top: 80px;
 	margin-left:auto;
 	margin-right: auto;
 	border-radius: 10px 10px 10px 50px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 
+    animation-duration: .8s;
+    animation-name: downbox;
+
+    @media screen and (max-width: $media_medium) {
+        width: 650px;
+        height: 500px;
+        margin-top: 100px;
+        margin-left:auto;
+        margin-right: auto;
+    }
     @media screen and (max-width: $media_small) {
         width: 350px;
         height: 600px;
@@ -23,14 +33,6 @@ body {
         margin-bottom: 50px;
         border-radius: 20px 20px 20px 20px;
     }
-
-    @media screen and (max-width: $media_medium) {
-        width: 650px;
-        height: 500px;
-        margin-top: 100px;
-        margin-left:auto;
-        margin-right: auto;
-    }
 }
 
 .logo-div{
@@ -39,14 +41,13 @@ body {
 	height: 500px;
 	border-radius: 0px 20px 0px 50px;
 	box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+    @media screen and (max-width: $media_medium) {
+        width: 300px;
+    }
     @media screen and (max-width: $media_small) {
         width: 350px;
         height: 200px;
         border-radius: 20px 20px 20px 20px;
-    }
-
-    @media screen and (max-width: $media_medium) {
-        width: 300px;;
     }
 }
 
@@ -55,30 +56,25 @@ body {
 	margin-top: 100px;
 	margin-left: 140px;
     margin-bottom: 20px;
-    
-    @media screen and (max-width: $media_small) {
-        width: 80px;
-        margin-top: 25px;
-        margin-left: 130px;
-    }
+
     @media screen and (max-width: $media_medium) {
         width: 100px;
         margin-top: 150px;
         margin-left: 100px;
     }
+    @media screen and (max-width: $media_small) {
+        width: 80px;
+        margin-top: 25px;
+        margin-left: 130px;
+    }
 }
 
-.label-div label{
-	margin-left: 150px;
-	color: $secondary_color;
-	font-size: 40px;
-    font-weight: 600;
-    
-    @media screen and (max-width: $media_small) {
-        label{
-            font-size: 30px;
-            margin-left: 110px;
-        } 
+.label-div {
+    label{
+        margin-left: 150px;
+        color: $secondary_color;
+        font-size: 40px;
+        font-weight: 600;
     }
 
     @media screen and (max-width: $media_medium) {
@@ -86,6 +82,12 @@ body {
             font-size: 30px;
             margin-left: 90px;
         }
+    }
+    @media screen and (max-width: $media_small) {
+        label{
+            font-size: 30px;
+            margin-left: 110px;
+        } 
     }
 }
 .form-div{
@@ -103,12 +105,16 @@ body {
     label{	
         margin-left: 260px;
         font-weight: bolder;
-        color: $label_color;
+        color: $primary_color;
     }
     label:hover{
         cursor: pointer;
+        color: rgba($primary_color, 80%);
     }
-
+    @media screen and (max-width: $media_medium) {
+        position: relative;
+        margin-left: -25px;
+    }
     @media screen and (max-width: $media_small) {
         position: relative;
         margin-left: -20px;
@@ -121,8 +127,9 @@ body {
         width: 280px;
         height: 30px;
         border-radius: 10px;
-        border-width: 2px;
+        border-width: 1px;
         border-color: $border_color;
+        margin-top: 5px;
         margin-bottom: 20px;
         font-size: 18px;
         padding: 10px;
@@ -130,15 +137,6 @@ body {
     }
     label{
         padding-right:100%;
-    }
-    @media screen and (max-width: $media_small) {
-        margin-top: 10px;
-        margin-left: 20px;
-        input{
-            width: 230px;
-            height: 20px;
-            padding: 10px;
-        } 
     }
 
     @media screen and (max-width: $media_medium) { 
@@ -149,6 +147,15 @@ body {
             padding: 10px;
         }   
         
+    }
+    @media screen and (max-width: $media_small) {
+        margin-top: 10px;
+        margin-left: 20px;
+        input{
+            width: 230px;
+            height: 20px;
+            padding: 10px;
+        } 
     }
 }
 .checkbox-div{
@@ -161,10 +168,10 @@ body {
         cursor: pointer;
     }
     
-    @media screen and (max-width: $media_small) {
+    @media screen and (max-width: $media_medium) {
         margin-left: 20px;
     }
-    @media screen and (max-width: $media_medium) {
+    @media screen and (max-width: $media_small) {
         margin-left: 20px;
     }
 }
@@ -183,9 +190,11 @@ body {
 	font-weight: bold;
 	font-size: 16px;
     margin-left: 20px;
-    :hover{
+    outline: 0;
+    &:hover{
+        transition: .3s;
         cursor:pointer;
-        background-color: $primary_hover;
+        background-color: rgba($primary_hover,80%);
     }
 }
 .forgot-div{
@@ -199,3 +208,5 @@ body {
         cursor: pointer;
     } 
 }
+
+@import "./keyframes.scss";

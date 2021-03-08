@@ -1,32 +1,37 @@
-.content-singup{
+.hidden{	
+	display: none;
+}
+.active_register{overflow: visible;
 	transition: opacity 5s;
-	position: relative;
-	margin-top: 250px;
-	left: 200px;
-	width: 350px;
+	position: absolute;
+	display: flex;
+	left: 300px;
+	width: 600px;
 	height: 550px;
-	margin-left: auto;
-	margin-right: auto;
+	top: 50%;
+	left: 50%;
 	background-color: $secondary_color;
 	border-radius: 10px;
 	box-shadow: 0 0 0 1000px rgba(0,0,0,.8);
 	transform: translate(-50%, -50%);
-	display: none;
+	
+	animation-duration: .5s;
+	animation-name: showbox;
 
 	@media screen and (max-width: $media_medium) {
-		position: relative;
-		margin-top: 390px;
-		left: 180px;
+		margin-top: 100px;
 		width: 350px;
-		height: 550px;
+		height: 500px;	
 		transform: translate(-50%, -70%);
-		display: none;
 	}
 }
 .singup{
-	margin-top: -510px;
+	position: relative;
 	padding-top: 50px;
-	padding-left: 40px;
+	padding-left: 60px;
+	@media screen and (max-width: $media_medium) {
+		padding-left: 40px;
+	}
 }
 .registre {
 	label{
@@ -36,55 +41,85 @@
 		color: $primary_color;
 	}
 }
-.singup-label{
-	margin-left: auto;
-	margin-right: auto;
-}
+
 .txt-singup {
 	input{
 		font-family: $primary_font;
-		width: 250px;
-		height: 25px;
+		width: 450px;
+		height: 35px;
 		padding-left: 10px;
 		border-color:$label_color;
 		border-width: 1px;
-		border-radius: 3px;
-		margin-top: 10px;
-		margin-bottom: 10px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+        outline: 0;
+	}
+	@media screen and (max-width: $media_medium) {
+		input{
+			width: 250px;
+			height: 30px;
+		}
 	}
 }
 
 .btn-singup {
 	input{
-		width: 260px;
-		height: 35px;
+		width: 460px;
+		height: 40px;
 		margin-top: 20px;
-		border-radius: 50px;
+		border-radius: 40px;
 		font-weight: bold;
 		border: none;
 		color: white;
-		background-color: $primary_color;
+		background-color: transparent;
+		border: solid;
+		border-width: 1px;
+		border-color: $primary_color;
+		color: $primary_color;
 	}
 	input:hover{
+		transition: .5s;
 		cursor: pointer;
 		background-color: $primary_hover;
+		color: $secondary_color;
+	}
+	@media screen and (max-width: $media_medium) {
+		input{
+			width: 260px;
+		}
 	}
 }
 
-.btn-close {
-	input{
-		margin-left: 250px;
-		background-color: transparent;
-		border-radius:60px;
-		border-color: $border_color;
-		border-width: 1px;
-		font-size: 15px;
-		font-weight: bold;
-	}
-	input:hover{
-		transition: 1s;
-		cursor: pointer;
+.btn-close {		
+	width: 28px;
+	height: 28px;
+	margin-left: 250px;
+	border-radius: 100%;
+	border: solid;
+	background-color: transparent;
+	border-color: $primary_color;
+	border-width: 1px;
+	color: $primary_color;
+	transform: rotate(-90deg);
+	transition: transform .8s;
+	
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	&:hover{
 		background-color: $primary_color ;
+		transition: .5s;
+		cursor: pointer;
 		color: $secondary_color;
+
+		transform: rotate(90deg);
+		transition: transform .8s;
 	}
+	a {
+		text-align: center;
+		font-size: 18px;
+	}
+
 }
+
+@import "./keyframes.scss";

@@ -11,6 +11,6 @@
     "sass": "^1.32.8"
   },
   "scripts": {
-    "build": "sass ./resources/styles/index.scss ./app/View/resources/css/styles.css"
+    "build": "sass --watch ./resources/styles/index.scss ./app/View/resources/css/styles.css"
   }
 }

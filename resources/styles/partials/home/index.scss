@@ -1,0 +1,60 @@
+.content{
+    background-color: $secondary_color;
+    height: 100%;
+}
+.labels{
+    background-color: $secondary_color;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    padding-top: 30px;
+}
+.welcome{
+    label{
+        font-size: 50px;
+        font-weight: bold;
+        opacity: 30%;
+    }
+}
+.ydata{
+    label{
+        font-weight: bold;
+        opacity: 30%;
+    }
+}
+.fields{
+    display: flex;
+    align-items: center;
+    overflow: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+    input{
+        width: 500px;
+        height: 35px;
+        padding-left: 10px;
+        font-size: 14px;
+        outline: 0;
+        border-radius: 5px;
+        border-width: 1px;
+        border-color: $border_color;
+    }
+
+    @media screen and (max-width: $media_medium) {
+		input{
+			width: 400px;
+			height: 30px;
+		}
+	}
+
+    @media screen and (max-width: $media_small) {
+		input{
+			width: 250px;
+			height: 30px;
+		}
+	}
+}
