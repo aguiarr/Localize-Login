@@ -402,15 +402,24 @@ body {
   width: 23px;
   margin-left: 10px;
 }
+.img-title:hover img {
+  cursor: pointer;
+}
 
 .title-label {
   margin-left: 35px;
   margin-top: 12px;
 }
-.title-label label {
+.title-label a {
+  text-decoration: none;
+}
+.title-label a label {
   font-size: 31px;
   font-weight: bold;
   color: #fff;
+}
+.title-label:hover a label {
+  cursor: pointer;
 }
 
 .out-section {

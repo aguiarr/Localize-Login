@@ -10,7 +10,7 @@
 <header>
     <div class="title-section">
         <div class="title-label">
-            <label>Localize</label>
+            <a href="/home"><label>Localize</label></a>
         </div>
         <div class="img-title">
             <img src="../app/View/resources/img/logo.png" alt="Localize">

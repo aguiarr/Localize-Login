@@ -13,16 +13,32 @@ body{
         width: 23px;
         margin-left: 10px;
     }
+    &:hover{
+        img{
+            cursor: pointer;
+        }
+    }
 }
 
 .title-label{
     margin-left: 35px;
     margin-top: 12px;
-    label{
-        font-size: 31px;
-        font-weight: bold;
-        color: $secondary_color;
+    a{
+        text-decoration: none;
+        label{
+            font-size: 31px;
+            font-weight: bold;
+            color: $secondary_color;
+        }
     }
+    &:hover{
+        a{
+            label{
+                cursor: pointer;
+            }
+        }
+    }
+    
 }
 
 .out-section{
