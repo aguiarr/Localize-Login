@@ -16,13 +16,19 @@
     label{
         font-size: 50px;
         font-weight: bold;
-        opacity: 30%;
+        color: rgba($border_color,30%);
+        &::selection { 
+            background: $primary_hover; color: $secondary_color;
+        }
     }
 }
 .ydata{
     label{
         font-weight: bold;
-        opacity: 30%;
+        color: rgba($border_color,30%);
+        &::selection { 
+            background: $primary_hover; color: $secondary_color;
+        }
     }
 }
 .fields{
@@ -42,6 +48,14 @@
         border-radius: 5px;
         border-width: 1px;
         border-color: $border_color;
+        &::selection { 
+            background: $primary_hover; color: $secondary_color;
+        }
+    }
+    h4{
+        &::selection { 
+            background: $primary_hover; color: $secondary_color;
+        }
     }
 
     @media screen and (max-width: $media_medium) {
