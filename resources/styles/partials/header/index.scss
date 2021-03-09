@@ -12,6 +12,9 @@ body{
     img{
         width: 23px;
         margin-left: 10px;
+        &::selection { 
+            background: $primary_hover;
+        }
     }
     &:hover{
         img{
@@ -35,6 +38,9 @@ body{
         a{
             label{
                 cursor: pointer;
+                &::selection { 
+                    background: $primary_hover; color: $secondary_color;
+                }
             }
         }
     }

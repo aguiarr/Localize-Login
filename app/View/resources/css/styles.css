@@ -402,6 +402,9 @@ body {
   width: 23px;
   margin-left: 10px;
 }
+.img-title img::selection {
+  background: #5e169c;
+}
 .img-title:hover img {
   cursor: pointer;
 }
@@ -420,6 +423,10 @@ body {
 }
 .title-label:hover a label {
   cursor: pointer;
+}
+.title-label:hover a label::selection {
+  background: #5e169c;
+  color: #fff;
 }
 
 .out-section {
