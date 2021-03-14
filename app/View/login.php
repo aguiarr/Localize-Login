@@ -21,7 +21,7 @@
 				</div>
 			</div>
 			<div class="form-div">
-				<form method="POST" action="/login" id="login">
+				<form method="POST" action="/login" id="login-form">
 					<div class="label-form">
 						<label id="singup">Sing Up</label>
 					</div>
@@ -55,7 +55,7 @@
 		</div>
 	</div>
 	<div class="hidden" id="register">
-		<form class="singup" method="post" action="/register" id="register">
+		<form class="singup" method="post" action="/register" id="register-form">
 			<div class="btn-close">
 				<a type="button" id="btn_close">&#10005;</a>
 			</div>
@@ -73,11 +73,15 @@
 				</div>
 				<div class="txt-singup"> 
 					<label class="singup-label">Phone</label><br>
-					<input type="text" required name="phone">
+					<input id="phone" type="text" required name="phone">
 				</div>
 				<div class="txt-singup">
 					<label class="singup-label" >Password</label><br>
 					<input type="password" required name="password">
+				</div>
+				<div class="txt-singup">
+					<label class="singup-label" >Password Confirmation</label><br>
+					<input type="password" required >
 				</div>
 			</div>
 			<div class="btn-singup">
@@ -85,6 +89,6 @@
 			</div>
 		</form>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="../app/View/resources/js/library/vanilla-masker.min.js"></script>
 </body>
 </html>

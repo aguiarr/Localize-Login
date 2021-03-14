@@ -7,7 +7,7 @@
 	display: flex;
 	left: 300px;
 	width: 600px;
-	height: 550px;
+	height: 600px;
 	top: 50%;
 	left: 50%;
 	background-color: $secondary_color;
@@ -52,6 +52,7 @@
 		border-width: 1px;
 		border-radius: 10px;
 		margin-bottom: 15px;
+		font-size: 14px;
         outline: 0;
 	}
 	@media screen and (max-width: $media_medium) {

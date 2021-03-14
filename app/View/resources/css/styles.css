@@ -11,6 +11,15 @@ body, html {
   align-items: center;
 }
 
+*::selection {
+  background: transparent;
+}
+
+label::selection, h4::selection, input::selection {
+  background: #5e169c;
+  color: #fff;
+}
+
 body {
   background-image: linear-gradient(to bottom, #491179, #FFFFFF);
   background-repeat: no-repeat;
@@ -258,7 +267,7 @@ body {
   display: flex;
   left: 300px;
   width: 600px;
-  height: 550px;
+  height: 600px;
   top: 50%;
   left: 50%;
   background-color: #fff;
@@ -304,6 +313,7 @@ body {
   border-width: 1px;
   border-radius: 10px;
   margin-bottom: 15px;
+  font-size: 14px;
   outline: 0;
 }
 @media screen and (max-width: 910px) {
@@ -482,18 +492,10 @@ body {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.3);
 }
-.welcome label::selection {
-  background: #5e169c;
-  color: #fff;
-}
 
 .ydata label {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.3);
-}
-.ydata label::selection {
-  background: #5e169c;
-  color: #fff;
 }
 
 .fields {
@@ -513,14 +515,6 @@ body {
   border-radius: 5px;
   border-width: 1px;
   border-color: #000;
-}
-.fields input::selection {
-  background: #5e169c;
-  color: #fff;
-}
-.fields h4::selection {
-  background: #5e169c;
-  color: #fff;
 }
 @media screen and (max-width: 910px) {
   .fields input {

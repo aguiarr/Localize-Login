@@ -10,3 +10,15 @@ body, html{
 	justify-content: center;
 	align-items: center
 }
+
+*{
+	&::selection { 
+		background: transparent;
+	}
+}     
+
+label, h4,input{
+	&::selection { 
+		background: $primary_hover; color: $secondary_color;
+	}
+}    
