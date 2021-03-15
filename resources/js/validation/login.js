@@ -19,8 +19,7 @@ function verifyFields(){
 
 document.getElementById("login-form")
     .addEventListener("submit", element => {
-        console.log("envia");
         if(verifyFields()){
             element.preventDefault();
-        };
+        }
 });

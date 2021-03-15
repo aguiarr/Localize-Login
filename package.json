@@ -20,6 +20,7 @@
     "gulp-uglify": "^3.0.2"
   },
   "scripts": {
-    "dev": "gulp watch"
+    "dev": "gulp watch",
+    "build": "gulp build"
   }
 }

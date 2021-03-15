@@ -49,14 +49,12 @@ for (field of fields) {
     if(field.id == 'password-register'){
     }
 }
+var error = false
 document.getElementById("register-form")
     .addEventListener("submit", element => {
-        console.log("envia");
-        if(passwordValidation(passwordField, passwordSpan) || passwordConfirmation(passwordField, confirmationField, confirmationSpan) || emailValidation(emailField, emailSpan)){
-            element.preventDefault();
-        };
-        emailValidation(emailField, emailSpan)
-        element.preventDefault();
+        if(passwordValidation(passwordField, passwordSpan)) element.preventDefault();
+        if(passwordConfirmation(passwordField, confirmationField, confirmationSpan)) element.preventDefault();
+        if(emailValidation(emailField, emailSpan)) element.preventDefault();
 
 });
 
@@ -69,9 +67,10 @@ function passwordValidation(field, span){
         field.style.color = erroColor;
     }
     isNumber = false;
-    arr = value.split(' ');
+    arr = value.split('');
     arr.forEach(letter => {
         if(parseInt(letter)) isNumber = true;
+        console.log(isNumber);
 
         if(!parseInt(letter) && !isUpperCase(letter)){
             result = "The password had to have a less one upper case characters!";
@@ -88,6 +87,7 @@ function passwordValidation(field, span){
         field.style.borderColor = erroColor;
         field.style.color = erroColor;
         span.innerHTML = result;
+        error = true;
     }else{
         span.innerHTML = ' ';
         field.style.borderColor = "black";
@@ -103,7 +103,7 @@ function passwordConfirmation(password, confirmation, span){
         confirmation.style.color = "black";
         span.innerHTML = " ";
 
-        return true;
+        return false;
     }else{
         confirmation.style.borderColor = erroColor;
         confirmation.style.color = erroColor;
@@ -120,7 +120,6 @@ function emailValidation(email, span){
     let error = false;
     let hasAt = false;
     arr.forEach(letter => {
-        console.log(letter);
         if(letter == '@') hasAt = '@';
     });
     if(!hasAt) error = true;
@@ -131,9 +130,11 @@ function emailValidation(email, span){
         email.style.borderColor = erroColor;
         email.style.color = erroColor;
         span.innerHTML = "Insert a valid email! Ex:'example@email.com'.";
+        return true;
     }else{
         email.style.borderColor = "black";
         email.style.color = "black";
         span.innerHTML = " ";
+        return false;
     }
 }
