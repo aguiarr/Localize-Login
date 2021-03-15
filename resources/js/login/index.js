@@ -7,6 +7,6 @@ $btn_singup.addEventListener('click', () => {
         $section_singup.classList.add('active_register');
 });
 $btn_close.addEventListener("click", () => {
-        $section_singup.classList.remove('active_register');
+        $section_singup.classList.remove('active_register')
 });
         

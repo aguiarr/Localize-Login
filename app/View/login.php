@@ -4,10 +4,10 @@
 	<title><?=$title?></title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-	<link rel="stylesheet" type="text/css" href="../app/View/resources/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="../app/View/resources/css/index.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 	
-	<script type="text/javascript" defer src="../app/View/resources/js/main.js"></script>
+	<script type="text/javascript" defer src="../app/View/resources/js/scripts.js"></script>
 </head>
 <body>
 	<div class="login">
@@ -28,11 +28,11 @@
 					<div class="txt-div">
 						<div class="email-div">
 							<label>Email</label>
-							<input type="email" id="email" required name="email" class="email-input">
+							<input type="email" id="email"  name="email" class="email-input">
 						</div>
 						<div class="password-div">
 							<label>Password</label>
-							<input type="password" id="password" required name="password" class="password-input">
+							<input type="password" id="password"  name="password" class="password-input">
 						</div>
 					</div>
 					<div class="checkbox-div">
@@ -40,7 +40,7 @@
 						<label for="ckb">Keep me looged in</label>
 					</div>
 					<div class="message-div">
-						<span class="message"><?=$erro?></span>
+						<span class="error-login errors"><?=$erro?></span>
 					</div>
 					<div class="btn-forgot-div">
 						<div class="btn-div">
@@ -63,13 +63,15 @@
 				<label>Register</label>
 			</div>
 			<div class="txt-singup-div">
+				<span class="error-singup errors"></span>
 				<div class="txt-singup">
 					<label class="singup-label" required >Name</label><br>
 					<input type="text" required name="name">
 				</div> 
 				<div class="txt-singup">
 					<label class="singup-label" required >Email</label><br>
-					<input type="text" required name="email">
+					<input type="text" required name="email" id="email-register"><br>
+					<span  class="error-email errors"></span>
 				</div>
 				<div class="txt-singup"> 
 					<label class="singup-label">Phone</label><br>
@@ -77,11 +79,13 @@
 				</div>
 				<div class="txt-singup">
 					<label class="singup-label" >Password</label><br>
-					<input type="password" required name="password">
+					<input type="password" required name="password" id="password-register"><br>
+					<span  class="error-password errors"></span>
 				</div>
 				<div class="txt-singup">
-					<label class="singup-label" >Password Confirmation</label><br>
-					<input type="password" required >
+					<label class="singup-label" >Confirm Password</label><br>
+					<input type="password" id="confirmation-password" required ><br>
+					<span  class="error-confirmation errors"></span>
 				</div>
 			</div>
 			<div class="btn-singup">

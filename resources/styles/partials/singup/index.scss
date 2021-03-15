@@ -1,7 +1,8 @@
 .hidden{	
 	display: none;
 }
-.active_register{overflow: visible;
+.active_register{
+	overflow: visible;
 	transition: opacity 5s;
 	position: absolute;
 	display: flex;
@@ -21,7 +22,7 @@
 	@media screen and (max-width: $media_medium) {
 		margin-top: 100px;
 		width: 350px;
-		height: 500px;	
+		height: 560px;	
 		transform: translate(-50%, -70%);
 	}
 }
@@ -48,8 +49,9 @@
 		width: 450px;
 		height: 35px;
 		padding-left: 10px;
+		border: solid;
 		border-color:$label_color;
-		border-width: 1px;
+		border-width: 1.9px;
 		border-radius: 10px;
 		margin-bottom: 15px;
 		font-size: 14px;

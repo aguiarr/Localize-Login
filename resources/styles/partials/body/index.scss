@@ -22,3 +22,9 @@ label, h4,input{
 		background: $primary_hover; color: $secondary_color;
 	}
 }    
+.errors{
+	margin-bottom: 5px;
+	color: $primary_color;
+	font-size: 12px;
+	font-style: italic;
+}

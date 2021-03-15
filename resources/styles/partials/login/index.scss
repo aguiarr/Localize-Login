@@ -126,6 +126,7 @@ body {
     input{
         width: 280px;
         height: 30px;
+        border: solid;
         border-radius: 10px;
         border-width: 1px;
         border-color: $border_color;
@@ -207,6 +208,9 @@ body {
     label:hover{
         cursor: pointer;
     } 
+}
+.error-login{
+    margin-left: 40px;
 }
 
 @import "./keyframes.scss";
