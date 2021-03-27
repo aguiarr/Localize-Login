@@ -12,6 +12,5 @@ return [
     '/login'        => Checkout::class,
     '/logout'       => Logout::class,
     '/register'     => Persistence::class,
-    '/home'         => Show::class,
-    '/verify'       => VerifyEmail::class,
+    '/home'         => Show::class
 ];

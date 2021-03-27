@@ -62,7 +62,7 @@ document.getElementById("register-form")
 function verifyEmail(){
     (function ($){
         str = emailField.value;
-        $.get("../../../app/Controller/Register/VerifyEmail.php?email=" + str, function(data, status){
+        $.get("../../../app/Helpers/VerifyEmail.php?email=" + str, function(data, status){
             let value = JSON.parse(data);
             if(parseInt(value)){
                 emailSpan.innerText = "Este email já existe na nossa base de dados!";
