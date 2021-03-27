@@ -50,9 +50,9 @@ class Checkout extends Controller implements InterfaceController
 
 
         $repoUser = new RepoUsers($this->connection);
-        $user_id = $repoUser->checkout($email, $password)['id'];
-
-        if(count($user_id) == 1){
+        $user_id = $repoUser->checkout($email, $password);
+    
+        if(count($user_id['id']) == 1){
 
             session_start();
             $_SESSION['id'] = $user_id;
@@ -60,6 +60,8 @@ class Checkout extends Controller implements InterfaceController
             header('Location: /home', true, 302);
 
         }else{
+            session_start();
+            $_SESSION['erro'] = true;
             echo $this->render('login.php',[
                 'title' => 'Localize - Login',
                 'erro'  => 'Email ou Senha incorretos!'

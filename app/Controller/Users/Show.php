@@ -20,12 +20,12 @@ class Show extends Controller implements InterfaceController
     public function request(): void
     {
             $id = intval($_SESSION['id']);
-            $user = new RepoUsers($this->connection);
-            $user_a = $user->find($id);
+            $userRepository = new RepoUsers($this->connection);
+            $user = $userRepository->find($id);
 
             echo $this->render('home.php', [
                 'titulo' => 'Home', 
-                'user' => $user_a
+                'user' => $user
             ]);
        
     }

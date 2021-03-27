@@ -52,11 +52,30 @@ for (field of fields) {
 var error = false
 document.getElementById("register-form")
     .addEventListener("submit", element => {
-        if(passwordValidation(passwordField, passwordSpan)) element.preventDefault();
-        if(passwordConfirmation(passwordField, confirmationField, confirmationSpan)) element.preventDefault();
-        if(emailValidation(emailField, emailSpan)) element.preventDefault();
+
+        if((passwordValidation(passwordField, passwordSpan) || passwordConfirmation(passwordField, confirmationField, confirmationSpan)) || (emailValidation(emailField, emailSpan) || verifyEmail())){
+            element.preventDefault()
+        }
 
 });
+
+function verifyEmail(){
+    (function ($){
+        str = emailField.value;
+        $.get("../../../app/Controller/Register/VerifyEmail.php?email=" + str, function(data, status){
+            let value = JSON.parse(data);
+            if(parseInt(value)){
+                emailSpan.innerText = "Este email já existe na nossa base de dados!";
+            }
+        });
+    })(jQuery);
+
+    if(emailSpan.innerText == ''){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 function passwordValidation(field, span){
     let value = field.value;

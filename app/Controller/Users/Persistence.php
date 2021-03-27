@@ -2,12 +2,13 @@
 
 namespace Localize\Controller\Users;
 
+use Localize\Controller\Controller;
 use Localize\Controller\InterfaceController;
 use Localize\Model\Entity\Users;
 use Localize\Model\Infra\Persistence\Connection;
 use Localize\Model\Infra\Repository\RepoUsers;
 
-class Persistence implements InterfaceController
+class Persistence extends Controller implements InterfaceController
 {
     private \PDO $connection;
 
@@ -71,10 +72,15 @@ class Persistence implements InterfaceController
             $user = new Users($email, $password, $name, $phone, null );
         }
 
+        
         // var_dump($user);
         $repoUser = new RepoUsers($this->connection);
         if($repoUser->save($user)){
-            header('Location: /', true, 302);
+            echo $this->render('emailConfirmation.php', [
+                'titulo' => 'Home', 
+                'email'  => $email,
+                'name'   => $name
+            ]);
         }else{
             header(404);
         }

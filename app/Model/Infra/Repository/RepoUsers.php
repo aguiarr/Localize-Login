@@ -30,6 +30,19 @@ class RepoUsers implements RepositoryUsers
         return $dataList[0];
     }
 
+    public function verifyEmail(string $email){
+        $sqlQuery = "SELECT id FROM users WHERE email = ?;";
+        $stmt = $this->connection->prepare($sqlQuery);
+        $stmt->bindValue(1, $email);
+
+        $stmt->execute();
+        $dataList = $stmt->fetchAll();
+        if($dataList[0] == null){
+            return [];
+        }
+        return $dataList[0];
+    }
+
     public function find(int $id): array
     {
         $sqlQuery = 'SELECT id, name, email, phone FROM users WHERE id = ?;';
