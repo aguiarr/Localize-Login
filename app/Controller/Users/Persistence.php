@@ -6,6 +6,9 @@ use Localize\Controller\Controller;
 use Localize\Controller\InterfaceController;
 use Localize\Model\Entity\Users;
 use Localize\Model\Infra\Persistence\Connection;
+use Localize\Services\PHPMailer\SendMail;
+use Localize\Helpers\MailConstruct;
+use Localize\Helpers\Util;
 use Localize\Model\Infra\Repository\RepoUsers;
 
 class Persistence extends Controller implements InterfaceController
@@ -69,18 +72,26 @@ class Persistence extends Controller implements InterfaceController
         }
 
         if($ready){
-            $user = new Users($email, $password, $name, $phone, null );
+            $user = new Users($email, $password, $name, $phone, $token  null );
         }
 
         
-        // var_dump($user);
+
         $repoUser = new RepoUsers($this->connection);
         if($repoUser->save($user)){
+            $subject   = 'Localize - Confirmação de Login';
+            
+            $token     = Util::generateToken();
+            $body      = MailConstruct::emailConfirmation($subject, $token);
+            $sendEmail = new SendMail($email,$name,$subject,$body);
+            $sendEmail->sendMail();
+
             echo $this->render('emailConfirmation.php', [
                 'titulo' => 'Home', 
                 'email'  => $email,
                 'name'   => $name
             ]);
+            
         }else{
             header(404);
         }

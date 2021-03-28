@@ -5,7 +5,6 @@ use Localize\Controller\Login\Checkout;
 use Localize\Controller\Login\Logout;
 use Localize\Controller\Users\Persistence;
 use Localize\Controller\Users\Show;
-use Localize\Controller\Register\VerifyEmail;
 
 return [
     ''              => Login::class,

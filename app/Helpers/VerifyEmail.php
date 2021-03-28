@@ -1,9 +1,7 @@
 <?php 
 
-namespace Localize\Controller\Register;
+namespace Localize\Helpers;
 
-use Localize\Model\Infra\Persistence\Connection;
-use Localize\Model\Infra\Repository\RepoUsers;
 $con = mysqli_connect('127.0.0.1','root','','localize');
 if (!$con) {
     die('Could not connect: ' . mysqli_error($con));

@@ -1,4 +1,8 @@
+#ignore files
 node_modules/
+vendor/
 yarn.lock
 /app/View/resources/css/*.css
 /app/View/resources/js/*.js
+
+#do not ignore files

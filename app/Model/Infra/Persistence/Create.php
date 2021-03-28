@@ -25,11 +25,13 @@ class Create
     public function crateTables()
     {
         $sqlQuery = "CREATE TABLE IF NOT EXISTS users(
-            id INT PRIMARY KEY AUTO_INCREMENT,
-            name VARCHAR(100),
-            email VARCHAR(200) NOT NULL,
-            phone VARCHAR(20),
-            password TEXT NOT NULL
+            id        INT PRIMARY KEY AUTO_INCREMENT,
+            name      VARCHAR(100),
+            email     VARCHAR(200) NOT NULL,
+            phone     VARCHAR(20),
+            confirmad INT DEFAULT 0,
+            token     VARCHAR(20),
+            password  TEXT NOT NULL
         );
         ";
         $stmt = $this->connection->prepare($sqlQuery);

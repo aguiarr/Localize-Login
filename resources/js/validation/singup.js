@@ -56,6 +56,10 @@ document.getElementById("register-form")
         if((passwordValidation(passwordField, passwordSpan) || passwordConfirmation(passwordField, confirmationField, confirmationSpan)) || (emailValidation(emailField, emailSpan) || verifyEmail())){
             element.preventDefault()
         }
+        // if(passwordValidation(passwordField, passwordSpan)) element.preventDefault();
+        // if(passwordConfirmation(passwordField, confirmationField, confirmationSpan)) element.preventDefault();
+        // if(emailValidation(emailField, emailSpan))element.preventDefault();
+        // if(!verifyEmail()) element.preventDefault();
 
 });
 
