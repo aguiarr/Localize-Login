@@ -32,6 +32,8 @@ class SendMail{
         $this->mail->SMTPSecure = "ssl";                                 
         $this->mail->Mailer     = "smtp";
 
+        $this->mail->SMTPDebug = false;
+        $this->mail->do_debug = 0;
 
         $this->mail->Host       = Access::$mail_host;    
         $this->mail->Username   = Access::$mail_username;                
@@ -50,6 +52,6 @@ class SendMail{
         $this->mail->Body    = $this->body;
         $this->mail->AltBody = $this->body;
 
-        $this->mail->send()
+        $this->mail->send();
     }
 }

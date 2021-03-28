@@ -72,7 +72,8 @@ class Persistence extends Controller implements InterfaceController
         }
 
         if($ready){
-            $user = new Users($email, $password, $name, $phone, $token  null );
+            $token = Util::generateToken();
+            $user  = new Users($email, $password, $token, $name, $phone,  null );
         }
 
         
@@ -81,7 +82,6 @@ class Persistence extends Controller implements InterfaceController
         if($repoUser->save($user)){
             $subject   = 'Localize - Confirmação de Login';
             
-            $token     = Util::generateToken();
             $body      = MailConstruct::emailConfirmation($subject, $token);
             $sendEmail = new SendMail($email,$name,$subject,$body);
             $sendEmail->sendMail();

@@ -45,7 +45,7 @@ class RepoUsers implements RepositoryUsers
 
     public function find(int $id): array
     {
-        $sqlQuery = 'SELECT id, name, email, phone FROM users WHERE id = ?;';
+        $sqlQuery = 'SELECT id, name, email, phone, token, confirmed FROM users WHERE id = ?;';
         $stmt = $this->connection->prepare($sqlQuery);
         $stmt->bindValue(1, $id);
         $stmt->execute();
@@ -53,9 +53,10 @@ class RepoUsers implements RepositoryUsers
         $dataList = $stmt->fetchAll();
         return $dataList[0];
     }
+
     public function findAll(): array
     {
-        $sqlQuery = 'SELECT * FROM users;';
+        $sqlQuery = 'SELECT id, name, email, phone, token, confirmed FROM users;';
         $stmt = $this->connection->prepare($sqlQuery);
         $stmt->execute();
 
@@ -71,6 +72,7 @@ class RepoUsers implements RepositoryUsers
             $list[] = new Users(
               $data['email'],
               $data['password'],
+              $data['token'],
               $data['name'],
               $data['phone'],
               $data['id'],
@@ -87,14 +89,16 @@ class RepoUsers implements RepositoryUsers
 
     public function insert(Users $users): bool
     {
-        $sqlQuery = 'INSERT INTO users (name, email, phone, password) VALUES (:name, :email, :phone, md5(:password));';
+        $sqlQuery = 'INSERT INTO users (name, email, phone, password, token, confirmed) VALUES (:name, :email, :phone, md5(:password), :token, :confirmed);';
         $stmt = $this->connection->prepare($sqlQuery);
 
         $success = $stmt->execute([
-            ':name' => $users->getName(),
-            ':email' => $users->getEmail(),
-            ':phone' => $users->getPhone(),
-            ':password' => $users->getPassword()
+            ':name'      => $users->getName(),
+            ':email'     => $users->getEmail(),
+            ':phone'     => $users->getPhone(),
+            ':password'  => $users->getPassword(),
+            ':token'     => $users->getToken(),
+            ':confirmed' => 0
         ]);
         return $success;
     }

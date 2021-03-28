@@ -53,7 +53,7 @@ var error = false
 document.getElementById("register-form")
     .addEventListener("submit", element => {
 
-        if((passwordValidation(passwordField, passwordSpan) || passwordConfirmation(passwordField, confirmationField, confirmationSpan)) || (emailValidation(emailField, emailSpan) || verifyEmail())){
+        if((passwordValidation(passwordField, passwordSpan) || passwordConfirmation(passwordField, confirmationField, confirmationSpan)) || (emailValidation(emailField, emailSpan) || !verifyEmail())){
             element.preventDefault()
         }
         // if(passwordValidation(passwordField, passwordSpan)) element.preventDefault();
