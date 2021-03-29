@@ -4,5 +4,5 @@ vendor/
 yarn.lock
 /app/View/resources/css/*.css
 /app/View/resources/js/*.js
-app/Services/PHPMailer/Access.php
+/app/Services/PHPMailer/Access.php
 #do not ignore files
