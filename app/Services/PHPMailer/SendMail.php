@@ -16,7 +16,7 @@ class SendMail{
     {
         $this->mail      = new PHPMailer();
         $this->name      = $name;
-        $this->usernames = $username;
+        $this->username  = $username;
         $this->subject   = $subject;
         $this->body      = $body;
     }
@@ -43,7 +43,7 @@ class SendMail{
         $this->mail->setFrom( Access::$mail_username);
         $this->mail->FromName   = 'Localize';
 
-        $this->mail->addAddress(Access::$mail_username, $this->name);   
+        $this->mail->addAddress($this->username , $this->name);   
 
         //Content
         $this->mail->isHTML(true);        

@@ -17,7 +17,7 @@ class RepoUsers implements RepositoryUsers
 
     public function checkout(string $email, string $password): array
     {
-        $sqlQuery = "SELECT id  FROM users WHERE email = ? AND password = md5(?);";
+        $sqlQuery = "SELECT id, confirmed FROM users WHERE email = ? AND password = md5(?);";
         $stmt = $this->connection->prepare($sqlQuery);
         $stmt->bindValue(1, $email);
         $stmt->bindValue(2, $password);
@@ -42,6 +42,26 @@ class RepoUsers implements RepositoryUsers
         }
         return $dataList[0];
     }
+
+    public function confirmToken(string $token): bool
+    {
+        $sqlQuery = 'UPDATE users SET confirmed = 1 where`token`like ?;';
+        $stmt = $this->connection->prepare($sqlQuery);
+        $stmt->bindValue(1, $token);
+        
+        return $stmt->execute();
+    }
+    public function findByToken(string $token): array
+    {
+        $sqlQuery = 'SELECT id, name, email, phone, token, confirmed FROM users WHERE token = ?;';
+        $stmt = $this->connection->prepare($sqlQuery);
+        $stmt->bindValue(1, $token);
+        $stmt->execute();
+
+        $dataList = $stmt->fetchAll();
+        return $dataList[0];
+    }
+
 
     public function find(int $id): array
     {

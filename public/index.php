@@ -5,7 +5,8 @@ use Localize\Controller\InterfaceController;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$path = $_SERVER['PATH_INFO'];
+$path = '/' . explode('/', $_SERVER['PATH_INFO'])[1];
+
 $rotas = require __DIR__ . '/../config/routes.php';
 
 if(!array_key_exists($path, $rotas)){
@@ -15,13 +16,13 @@ if(!array_key_exists($path, $rotas)){
 }
 $classControl = $rotas[$path];
 
-// session_start();
+session_start();
 
-// if((!isset($_SESSION['id']) && !$_SESSION['erro']) && $path !== null){
-//     header('Location: /');
-//     // exit;
-// }
-// var_dump($classControl);
+if((!isset($_SESSION['id']) && !$_SESSION['erro']) && $path !== null){
+    if(($path != '/confirmed' && $path != '/') && $path != '/confirmation'){
+        header('Location: /');
+    }
+}
 
 /** @var InterfaceController $controller */
 $controller =  new $classControl;

@@ -50,12 +50,17 @@ class Checkout extends Controller implements InterfaceController
 
 
         $repoUser = new RepoUsers($this->connection);
-        $user_id = $repoUser->checkout($email, $password);
-    
-        if(count($user_id['id']) == 1){
+        $user = $repoUser->checkout($email, $password);
+        
+        
+        if( $user['confirmed'] == 0 ){
+
+            header('Location: /confirmation', true, 302);
+
+        }else if( count($user['id']) == 1){
 
             session_start();
-            $_SESSION['id'] = $user_id;
+            $_SESSION['id'] = $user['id'];
 
             header('Location: /home', true, 302);
 

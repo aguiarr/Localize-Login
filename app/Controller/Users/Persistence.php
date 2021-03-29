@@ -85,12 +85,8 @@ class Persistence extends Controller implements InterfaceController
             $body      = MailConstruct::emailConfirmation($subject, $token);
             $sendEmail = new SendMail($email,$name,$subject,$body);
             $sendEmail->sendMail();
-
-            echo $this->render('emailConfirmation.php', [
-                'titulo' => 'Home', 
-                'email'  => $email,
-                'name'   => $name
-            ]);
+            
+            header('Location: /confirmation', true, 302);
             
         }else{
             header(404);

@@ -8,7 +8,7 @@ class Util
     public static function generateToken() {
 
         $length = 18;
-        $str = str_split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%");
+        $str = str_split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
         $arr = [];
 
         for($i = 0; $i < $length; $i++){
