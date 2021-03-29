@@ -20,9 +20,18 @@ class Util
         return $token;
     }
     
-    public static function ignorePath($paths, $current_path) {
-        
+    public static function ignorePath($current_path) {
+
         $ignore = false;
+        $paths = [
+            '/',
+            '/confirmed',
+            '/confirmation',
+            '/forgot',
+            '/404',
+            '/error'
+        ];
+
         foreach($paths as $path){
             if($path == $current_path){
                 $ignore = true;

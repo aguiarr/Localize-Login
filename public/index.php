@@ -15,22 +15,10 @@ if(!array_key_exists($path, $rotas)){
 }
 $classControl = $rotas[$path];
 
-$ignore_paths = [
-    '/',
-    '/confirmed',
-    '/confirmation',
-    '/forgot',
-    '/404',
-    '/error'
-];
-
 session_start();
-if(!$classControl) {
-    
-}
 
 if((!isset($_SESSION['id']) && !$_SESSION['erro']) && $path !== null){
-    if(!Util::ignorePath($ignore_paths, $path)){
+    if(!Util::ignorePath($path)){
         header('Location: /', true, 302);
     }
 }
