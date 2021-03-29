@@ -5,10 +5,12 @@ namespace Localize\Helpers;
 class MailConstruct
 {
     public static function emailConfirmation(string $subject, string $token){
-        $body = '<h1>'.$subject.'</h1>
-                 <div>
-                    <p>Obrigado por se cadastrar na <b>Localize</b>.</p>
-                    <p>Para confirmar o seu cadastro no sitema basta clicar nesse <a href="http://localhost:1111/confirmed?id='.$token.'">link</a>.</p>
+        $body = '<div style="backgroud-color:#4D1280; color:#fff">
+                    <h1>'.$subject.'</h1>
+                    <div>
+                        <p>Thanks for join us in the <b>Localize</b>.</p>
+                        <p>To confirm your registration on our system just click on this <a href="http://localhost:1111/confirmed?id='.$token.'">link</a>.</p>
+                    </div>
                  </div>'; 
         return $body;
     }

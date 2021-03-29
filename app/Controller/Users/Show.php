@@ -24,7 +24,7 @@ class Show extends Controller implements InterfaceController
             $user = $userRepository->find($id);
 
             echo $this->render('home.php', [
-                'titulo' => 'Home', 
+                'title' => 'Home', 
                 'user' => $user
             ]);
        
