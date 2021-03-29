@@ -19,4 +19,18 @@ class Util
         $token = join("", $arr);
         return $token;
     }
+    
+    public static function ignorePath($paths, $current_path) {
+        
+        $ignore = false;
+        foreach($paths as $path){
+            if($path == $current_path){
+                $ignore = true;
+                return $ignore;
+            } 
+        }
+
+        return $ignore;
+
+    }
 }

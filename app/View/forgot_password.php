@@ -10,7 +10,7 @@
     <script type="text/javascript" defer src="../app/View/resources/js/scripts.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="message-container">
         <div class="message">
             <h1>Sorry man );</h1>
             <h2>but it's not my problem.</h2>

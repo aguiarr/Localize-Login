@@ -88,12 +88,8 @@ class Persistence extends Controller implements InterfaceController
             
             header('Location: /confirmation', true, 302);
             
-        }else{
-            echo $this->render('error.php', [
-                'title'       => '404', 
-                'error'       => '404',
-                'description' => 'The page you are looking for does not exist or is no longer available.'
-            ]);
+        }else{            
+            header('Location: /404', true, 302);
         }
 
     }

@@ -42,12 +42,7 @@ class EmailConfirmation extends Controller implements InterfaceController
                 'user' => $user
             ]);
         }else{
-            $_SESSION['erro'] = 'Aconteceu um erro ao confirmar o email do usuário. Por favor tente mais tarde.';
-            echo $this->render('error.php', [
-                'title'       => 'Error', 
-                'error'       => 'Something is wrong',
-                'description' => "An error occurred while confirming the user's email. Please try later."
-            ]);
+            header('Location: /erro', true, 302);
         }
 
     }

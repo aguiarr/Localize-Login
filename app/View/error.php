@@ -10,10 +10,12 @@
     <script type="text/javascript" defer src="../app/View/resources/js/scripts.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="message-container">
         <div class="message">
-            <h1><?=$erro?>);</h1>
-            <p><?php isset($description) ?  $description : ''; ?></p>
+            <h1><?=$error?>  );</h1>
+            <div class="paragraphs">
+                <p><?= isset($description) ?  $description : ''; ?></p>
+            </div>
         </div>
     </div>
 </body>
