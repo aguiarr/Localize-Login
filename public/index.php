@@ -19,7 +19,7 @@ $classControl = $rotas[$path];
 session_start();
 
 if((!isset($_SESSION['id']) && !$_SESSION['erro']) && $path !== null){
-    if(($path != '/confirmed' && $path != '/') && $path != '/confirmation'){
+    if(($path != '/confirmed' && $path != '/') && ($path != '/confirmation' && $path != '/forgot')){
         header('Location: /');
     }
 }

@@ -2,6 +2,7 @@
 
 use Localize\Controller\Login\Login;
 use Localize\Controller\Login\Checkout;
+use Localize\Controller\Login\ForgotPassword;
 use Localize\Controller\Login\Logout;
 use Localize\Controller\Register\EmailConfirmation;
 use Localize\Controller\Register\RegisterConfirmation;
@@ -15,5 +16,6 @@ return [
     '/register'     => Persistence::class,
     '/home'         => Show::class,
     '/confirmation' => RegisterConfirmation::class,
-    '/confirmed'    => EmailConfirmation::class
+    '/confirmed'    => EmailConfirmation::class,
+    '/forgot'       => ForgotPassword::class
 ];

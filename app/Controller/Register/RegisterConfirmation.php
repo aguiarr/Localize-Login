@@ -10,8 +10,8 @@ class RegisterConfirmation extends Controller implements InterfaceController
 
     public function request(): void
     {
-        echo $this->render('registerConfirmation.php', [
-            'titulo' => 'Email Confirmation - Localize', 
+        echo $this->render('register_confirmation.php', [
+            'title' => 'Email Confirmation - Localize', 
         ]);
        
     }
