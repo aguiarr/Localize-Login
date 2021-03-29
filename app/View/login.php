@@ -28,7 +28,7 @@
 					<div class="txt-div">
 						<div class="email-div">
 							<label>Email</label>
-							<input type="email" id="email"  name="email" class="email-input">
+							<input type="email" id="email"  name="email" class="email-input" placeholder="email@example.com">
 						</div>
 						<div class="password-div">
 							<label>Password</label>
@@ -47,7 +47,7 @@
 							<input type="submit" value="Sing in" class="btn-input" id="btn">
 						</div>
 						<div class="forgot-div">
-							<label class="forgot-label">Forgot my password</label>
+							<a href="/forgot"><label class="forgot-label">Forgot my password</label></a>
 						</div>
 					</div>
 				</form>
@@ -65,25 +65,25 @@
 			<div class="txt-singup-div">
 				<span class="error-singup errors"></span>
 				<div class="txt-singup">
-					<label class="singup-label" required >Name</label><br>
-					<input type="text" required name="name">
+					<label class="singup-label" required >Name *</label><br>
+					<input type="text" required name="name" placeholder="Your Name">
 				</div> 
 				<div class="txt-singup">
-					<label class="singup-label" required >Email</label><br>
-					<input type="text" required name="email" id="email-register"><br>
+					<label class="singup-label" required >Email *</label><br>
+					<input type="text" required name="email" id="email-register" placeholder="email@example.com"><br>
 					<span  class="error-email errors"></span>
 				</div>
 				<div class="txt-singup"> 
-					<label class="singup-label">Phone</label><br>
-					<input id="phone" type="text" required name="phone">
+					<label class="singup-label">Phone *</label><br>
+					<input id="phone" type="text" required name="phone" placeholder="(00) 0 0000-0000">
 				</div>
 				<div class="txt-singup">
-					<label class="singup-label" >Password</label><br>
-					<input type="password" required name="password" id="password-register"><br>
+					<label class="singup-label" >Password *</label><br>
+					<input type="password" required name="password" id="password-register" placeholder="Required a less 6 characters" ><br>
 					<span  class="error-password errors"></span>
 				</div>
 				<div class="txt-singup">
-					<label class="singup-label" >Confirm Password</label><br>
+					<label class="singup-label" >Confirm Password *</label><br>
 					<input type="password" id="confirmation-password" required ><br>
 					<span  class="error-confirmation errors"></span>
 				</div>

@@ -12,10 +12,10 @@
 <body>
     <div class="container">
         <div class="message">
-            <h1>Obrigado por se cadastrar na Localize!!  ;)</h1>
+            <h1>Thanks for join us in the Localize!! ;)</h1>
             <div class="paragraphs">
-                <p>Mandamos um email de confirmação para o email que você cadastrou.</p>
-                <p>Abra o email e click no link para ativar sua conta!</p>
+                <p>We sent a confirmation email to the email you registered.</p>
+                <p>Open the email and click on the link to activate your account!</p>
             </div>
         </div>
     </div>
