@@ -25,12 +25,12 @@ class SendMail{
 
         $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;                      
         $this->mail->isSMTP();         
-                                                
-        $this->mail->SMTPAuth   = true;                                                               
+                                                                                                         
         $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
-        $this->mail->Port       = "465";   
-        $this->mail->SMTPSecure = "ssl";                                 
-        $this->mail->Mailer     = "smtp";
+        $this->mail->Port       = Access::$mail_port; 
+        $this->mail->SMTPSecure = Access::$mail_smtp_secure;                            
+        $this->mail->Mailer     = "smtp";    
+        $this->mail->SMTPAuth   = true;       
 
         $this->mail->SMTPDebug = false;
         $this->mail->do_debug = 0;
