@@ -8,7 +8,7 @@ Author Email: aguiartgv@gmail.com <br/>
 Linkdin: https://www.linkedin.com/in/matheus-de-aguiar-sim%C3%B5es-42910275/ <br/>
 
 ## About
-This is a login system made with PHP.
+This is a MVC login application made with PHP.
 
 ### Observations
 #### To use the application you will need some settings:
