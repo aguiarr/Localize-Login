@@ -17,7 +17,7 @@ $classControl = $rotas[$path];
 
 session_start();
 
-if((!isset($_SESSION['id']) && !$_SESSION['erro']) && $path !== null){
+if((!isset($_SESSION['id']) && !$_SESSION['erro'])){
     if(!Util::ignorePath($path)){
         header('Location: /', true, 302);
     }

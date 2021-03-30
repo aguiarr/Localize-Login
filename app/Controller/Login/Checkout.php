@@ -53,24 +53,22 @@ class Checkout extends Controller implements InterfaceController
         $user = $repoUser->checkout($email, $password);
         
         
-        if( $user['confirmed'] == 0 ){
+        if( !count($user['id']) == 1 ){
 
-            header('Location: /confirmation', true, 302);
-
-        }else if( count($user['id']) == 1){
-
-            session_start();
-            $_SESSION['id'] = $user['id'];
-
-            header('Location: /home', true, 302);
-
-        }else{
             session_start();
             $_SESSION['erro'] = true;
             echo $this->render('login.php',[
                 'title' => 'Localize - Login',
                 'erro'  => 'Email ou Senha incorretos!'
             ]);
+
+        }else if( $user['confirmed'] == 0){
+            header('Location: /confirmation', true, 302);
+
+        }else{
+            session_start();
+            $_SESSION['id'] = $user['id'];
+            header('Location: /home', true, 302);
         }
         
     }

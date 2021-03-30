@@ -11,7 +11,7 @@ Linkdin: https://www.linkedin.com/in/matheus-de-aguiar-sim%C3%B5es-42910275/ <br
 This is a login system made with PHP.
 
 ### Observations
-#### In order to use the application you will need some settings:
+#### To use the application you will need some settings:
  - Create a database 'localize';
  
  - Change the 'Access.php' file to configure the mail sending (app/Services/PHPMailer/Access.php);
@@ -31,7 +31,7 @@ This is a login system made with PHP.
  - PDO
  - MySql
  - PHPMailer
-d
+
 ### Front-end
  - CSS
  - JS

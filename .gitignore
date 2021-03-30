@@ -2,7 +2,11 @@
 node_modules/
 vendor/
 yarn.lock
+composer.lock
 /app/View/resources/css/*.css
 /app/View/resources/js/*.js
 /app/Services/PHPMailer/Access.php
+
+
+
 #do not ignore files

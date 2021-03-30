@@ -56,11 +56,6 @@ document.getElementById("register-form")
         if((passwordValidation(passwordField, passwordSpan) || passwordConfirmation(passwordField, confirmationField, confirmationSpan)) || (emailValidation(emailField, emailSpan) || !verifyEmail())){
             element.preventDefault()
         }
-        // if(passwordValidation(passwordField, passwordSpan)) element.preventDefault();
-        // if(passwordConfirmation(passwordField, confirmationField, confirmationSpan)) element.preventDefault();
-        // if(emailValidation(emailField, emailSpan))element.preventDefault();
-        // if(!verifyEmail()) element.preventDefault();
-
 });
 
 function verifyEmail(){
@@ -90,17 +85,18 @@ function passwordValidation(field, span){
         field.style.color = erroColor;
     }
     isNumber = false;
+    hasUppercase = false;
     arr = value.split('');
     arr.forEach(letter => {
         if(parseInt(letter)) isNumber = true;
-        console.log(isNumber);
 
-        if(!parseInt(letter) && !isUpperCase(letter)){
-            result = "The password had to have a less one upper case characters!";
+        if(!parseInt(letter) && isUpperCase(letter)){
+            hasUppercase =  true;
         }
 
     });
     if(!isNumber) result = "The password had to have a less one number!";
+    if(!hasUppercase) result = "The password had to have a less one upper case characters!";
 
     function isUpperCase(letter){
         return letter === letter.toUpperCase();
